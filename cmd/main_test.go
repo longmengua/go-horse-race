@@ -1,15 +1,18 @@
 package main_test
 
 import (
+	structs "go-horse-race/structs"
 	"testing"
 )
 
-func assertion(t *testing.T, assert any, result any) {
-	if assert != result {
-		t.Errorf("Error, %s, %s", result, assert)
-	}
-}
-
+/*
+1. create a number of horse match race
+2.
+*/
 func TestSlice(t *testing.T) {
-	assertion(t, true, true)
+	m := structs.NewMatch("Match", 10, 100)
+	m.Start()
+	if m.Winner == nil {
+		t.Errorf("Failed")
+	}
 }
